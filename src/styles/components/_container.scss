@@ -1,7 +1,33 @@
 .container {
+    background: $background;
     max-width: 60rem;
     margin: 0 auto;  // to center the container, not content inside
     padding: 0 $m-size;
     display: flex;
     justify-content: center;
+    border-style: solid;
+    border-color: $black;
+    border-width: 0.5;
+}
+
+.container-column {
+    background: $background;
+    max-width: 60rem;
+    margin: 0 auto;  // to center the container, not content inside
+    padding: 0 $m-size;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: $black;
+    border-width: 0.5;
+}
+.container-spacearound {
+    background: $background;
+    max-width: 60rem;
+    margin: 0 auto;  // to center the container, not content inside
+    padding: 0 $m-size;
+    display: flex;
+    border-style: solid;
+    border-color: $black;
+    border-width: 0.5;
 }
