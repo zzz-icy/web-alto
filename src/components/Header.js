@@ -5,9 +5,10 @@ import logo from '../images/Alto_logo.png';
 
 const Header = () => (
     <header>
-        <img src={logo} alt='alto logo' />
-        {/*A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.Adde is-active class to sass style file*/}
-
+        <div>
+            <img src={logo} alt='alto logo' />
+            {/*A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.Adde is-active class to sass style file*/}
+        </div>
         <NavLink exact to="/" activeClassName="is-active"> Trip</NavLink>
         <NavLink to="/driver" activeClassName="is-active"> Driver</NavLink>
         <NavLink to="/auto" activeClassName="is-active"> Auto</NavLink>
