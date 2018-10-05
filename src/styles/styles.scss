@@ -1,7 +1,7 @@
 @import './base/settings';
 @import './base/base';  // when we import a partial, we leave off the extension and the underscore
-// @import './components/header';
-// @import './components/container';
+@import './components/header';
+@import './components/container';
 // @import './components/button';
 // @import './components/widget';
 // @import './components/option';
