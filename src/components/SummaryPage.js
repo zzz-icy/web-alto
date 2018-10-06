@@ -24,28 +24,28 @@ class SummaryPage extends React.Component {
                     <div className="container--withoutPadding container--column topBorder marginLeft">
                         <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight', fontSize: 10 }}>Estimated Fare:</div>
                         <div className=" container--withoutPadding container-flexstart ">
-                            <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskBold', fontSize: 12 }}>$65 - $75</div>
+                            <div style={{ color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold', fontSize: 13 }}>$65 - $75</div>
                             <img src={Info} alt="Info Icon" style={{ marginLeft: 8, marginTop: 2, height: 11, width: 'auto' }} />
                         </div>
 
                     </div>
                     <div className="container--withoutPadding container--column topBorder marginLeft ">
                         <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight', fontSize: 10 }}>Passenger:</div>
-                        <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskBold', fontSize: 12 }}>1 - 5</div>
+                        <div style={{ color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold', fontSize: 13 }}>1 - 5</div>
                     </div>
                     <div className="container--withoutPadding container--column topBorder marginLeft ">
                         <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight', fontSize: 10 }}>Payment:</div>
-                        <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskBold', fontSize: 12 }}>Amex01</div>
+                        <div style={{ color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold', fontSize: 13 }}>Amex01</div>
                     </div>
                 </div>
                 <div className="container container--column marginTop">
-                    <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight' }}>449 Flora St.</div>
-                    <div style={{ color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight' }}>Dallas, Texas 75201</div>
+                    <div style={{ color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight' }}>449 Flora St.</div>
+                    <div style={{ color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight' }}>Dallas, Texas 75201</div>
                 </div>
                 <div className="container container--column marginTop">
-                    <p style={{ margin: 0 }}>DFW International Airport</p>
-                    <p style={{ margin: 0 }}>American Airlines terminal E</p>
-                    <p style={{ margin: 0 }}>Irving, Texas 75216</p>
+                    <p style={{ margin: 0, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold' }}>DFW International Airport</p>
+                    <p style={{ margin: 0, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold' }}>American Airlines terminal E</p>
+                    <p style={{ margin: 0, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold' }}>Irving, Texas 75216</p>
                 </div>
                 <div className="container marginTop">
 
