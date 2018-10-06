@@ -39,7 +39,7 @@
     // border-width: 0.5;
 }
 
-.container-small {
+.topBorder {
     
     border-top-color: $dark-background;
     border-top-style: solid;
@@ -56,6 +56,9 @@
 
 .marginRight {
     margin-right: 15;
+}
+.marginLeft {
+    margin-left: 15;
 }
 
 .marginTop{
