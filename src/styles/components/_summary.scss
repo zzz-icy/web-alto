@@ -4,3 +4,29 @@
     color: $grey-green; 
     font-family: 'PxGroteskLight';
 }
+
+.font--greygreenPxGroteskLight {
+    color: $grey-green;
+    font-family: 'PxGroteskLight';
+    font-size:$s-size;
+}
+
+.font--greygreenPxGroteskRegular {
+    color: $grey-green;
+    font-family: 'PxGroteskRegular';
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.font--brownPxGroteskLight{
+    color: $brown;
+    font-family: 'PxGroteskLight';
+    font-size: 10px;
+    margin-top: 8px;
+}
+
+.destination{
+    margin: 0;
+    color: $grey-green;
+    font-family: 'PxGroteskRegular';
+}

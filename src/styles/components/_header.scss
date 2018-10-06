@@ -6,10 +6,7 @@ margin-bottom: 10px;
 }
 
 // BEM Block Element modifier naming convention
-.header__title {
-font-size:$l-size;
-margin: 0;
-}
+
 .header__img {
     height: 14px;
     width:auto;
@@ -25,12 +22,6 @@ margin: 0;
 
 }
 
-.header__subtitle {
-    color: $black;
-    font-size:$m-size;
-    font-weight: 500;
-    margin: 0;
-}
 .is-active {
     // background:$brick-red;
     color: $brick-red;
