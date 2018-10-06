@@ -10,8 +10,6 @@ const DriverPage = () => (
                 src={driver}
                 alt="driver pic"
                 style={{
-                    // maxWidth: 600,
-                    // maxHeight: 600,
                     width: '100%',
                     height: 'auto',
                 }}
