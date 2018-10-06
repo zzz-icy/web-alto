@@ -1,0 +1,14 @@
+.route-big-button {
+    background: $brick-red;
+    border: none;
+    // border-bottom:.6rem solid darken($purple,10%); // sass reference functions
+    color: $white;
+    // font-weight: bold;
+    font-size: $s-size;
+    width: 100%; // take up the whole width of its container
+    margin-bottom: $m-size;
+    margin-Top: $m-size;
+    padding: 1.2rem;
+    border-width: 1px;
+    border-style: solid;
+}
