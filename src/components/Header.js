@@ -17,7 +17,7 @@ const Header = () => (
 
         </div>
         <div className="container container--centered container--center">
-            <div className="nav__item">
+            <div className="nav__item nav--marginRight">
                 <NavLink
                     exact to="/"
                     activeClassName="is-active"
@@ -27,7 +27,7 @@ const Header = () => (
                 </NavLink>
             </div>
 
-            <div className="nav__item">
+            <div className="nav__item nav--marginRight">
                 <NavLink
                     to="/driver"
                     activeClassName="is-active"
@@ -37,7 +37,7 @@ const Header = () => (
                 </NavLink>
             </div>
 
-            <div className="nav__item">
+            <div className="nav__item nav--marginRight">
                 <NavLink
                     to="/auto"
                     activeClassName="is-active"

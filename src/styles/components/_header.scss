@@ -32,18 +32,22 @@ margin: 0;
     margin: 0;
 }
 .is-active {
-    background:$light-grey-green;
-    color: $black;
+    // background:$brick-red;
+    color: $brick-red;
     
-
 }
 .nav__item {
+    width: 15%;
+    text-align: center;
+}
+
+.nav--marginRight{
     margin-right: 20px;
-    // width: 30;
+
 }
 
 .Nav_link{
-    color:$black;
+    // color:$black;
     font-size: 1.6rem;
     line-height: 1.6rem;
     text-decoration: none;
