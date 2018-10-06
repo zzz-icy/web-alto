@@ -1,19 +1,21 @@
 import React from 'react';
 import map from '../images/Map_overview.png';
 const RoutePage = () => (
-    <div className="container container--centered container--column">
+    <div>
+        <div className="container-withoutPadding container--centered route__image">
 
-        <img
-            src={map}
-            alt="map overview"
-            style={{
-                // maxWidth: 600,
-                // maxHeight: 600,
-                width: '100%',
-                height: 'auto'
-            }}
+            <img
+                src={map}
+                alt="map overview"
+            // style={{
+            //     // maxWidth: 600,
+            //     // maxHeight: 600,
+            //     width: '100%',
+            //     height: 'auto',
+            // }}
 
-        />
+            />
+        </div>
         <div className="container">
             <p style={{ fontSize: 24 }}>Your Trip</p>
         </div>
@@ -24,7 +26,7 @@ const RoutePage = () => (
         <div className="container container--flexstart ">
             <p style={{ marginTop: 0, fontSize: 10 }}>Estimated arrival at DFW Int'l Airport - Terminal E</p>
         </div>
-        <div>
+        <div className="container container--column">
             <p>Current Vibe</p>
             <p>Vaporwave Beats</p>
 
@@ -32,9 +34,10 @@ const RoutePage = () => (
         <div>
             <button className="route-big-button">
                 CHANGE VEHICLE VIBE
-                </button>
+            </button>
         </div>
     </div>
+
 );
 
 
