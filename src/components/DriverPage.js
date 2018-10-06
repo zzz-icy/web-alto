@@ -2,7 +2,7 @@ import React from 'react';
 import driver from '../images/Driver_photo.png';
 
 const DriverPage = () => (
-    <div className="container--withoutPadding container--column">
+    <div className="container container--column container--centered">
 
         <img
             src={driver}
@@ -11,7 +11,8 @@ const DriverPage = () => (
                 // maxWidth: 600,
                 // maxHeight: 600,
                 width: '100%',
-                height: 'auto'
+                height: 'auto',
+                padding: 0
             }}
 
         />

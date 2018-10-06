@@ -8,7 +8,7 @@ import vibes from '../images/Vibes_icon.png';
 
 const Header = () => (
     <header>
-        <div className="container container--spacebetween container--center">
+        <div className="container container--spacebetween container--centered">
             <img src={profile} alt='profile' className="header__img" />
 
             <img src={logo} alt='alto logo' className="header__img" />
