@@ -7,13 +7,13 @@ import vibes from '../images/Vibes_icon.png';
 // https://reacttraining.com/react-router/web/api/NavLink
 
 const Header = () => (
-    <header>
+    <header className="header">
         <div className="container container--spacebetween container--centered">
-            <img src={profile} alt='profile' className="header__img" />
+            <img src={profile} alt='profile' className="header__img--side" />
 
             <img src={logo} alt='alto logo' className="header__img" />
             {/*A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.Adde is-active class to sass style file*/}
-            <img src={vibes} alt='vibes' className="header__img" />
+            <img src={vibes} alt='vibes' className="header__img--side" />
 
         </div>
         <div className="container container--centered container--center">
