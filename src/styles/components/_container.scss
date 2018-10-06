@@ -1,6 +1,7 @@
 .container {
     background: $background;
     max-width: 60rem;
+    height: 100%;
     // margin: 0 auto;  // to center the container, not content inside
     padding: 0 $m-size;
     display: flex;
@@ -33,6 +34,13 @@
 }
 .container--spacearound {
     justify-content: space-around;
+
+    // border-style: solid;
+    // border-color: $black;
+    // border-width: 0.5;
+}
+.container--spacebetween {
+    justify-content: space-between;
 
     // border-style: solid;
     // border-color: $black;

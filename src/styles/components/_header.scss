@@ -11,8 +11,10 @@ font-size:$l-size;
 margin: 0;
 }
 .header__img {
-    height: 20px;
-    margin: $m-size auto;
+    height: 18px;
+    margin-top: $m-size;
+    margin-bottom: $m-size;
+
 }
 
 .header__subtitle {
