@@ -19,21 +19,21 @@ const RoutePage = () => (
             <img src={mapIcon} alt="current location icon" style={{ position: 'absolute', right: 20 }} />
         </div>
         <div className="container">
-            <p style={{ fontSize: 24 }}>Your Trip</p>
+            <p style={{ color: 'rgb(172,120,109)', fontSize: 10, fontFamily: 'PxGroteskRegular', letterSpacing: 2 }}>Your Trip</p>
         </div>
-        <div className="container container--flexstart alignItems">
-            <p style={{ fontSize: 48, margin: 0 }}>5:39</p>
-            <p style={{ fontSize: 36, margin: 0 }}>PM</p>
+        <div className="container alignItems">
+            <p style={{ fontSize: 48, margin: 0, fontFamily: 'PxGroteskLight' }}>5:39</p>
+            <p style={{ fontSize: 30, margin: 0, paddingLeft: 10, paddingBottom: 5, fontFamily: 'PxGroteskLight' }}>PM</p>
         </div>
         <div className="container container--flexstart ">
-            <p style={{ marginTop: 0, fontSize: 10 }}>Estimated arrival at DFW Int'l Airport - Terminal E</p>
+            <p style={{ marginTop: 0, fontFamily: 'PxGroteskLight', fontSize: 13, color: 'rgb(63,56,37)' }}>Estimated arrival at DFW Int'l Airport - Terminal E</p>
         </div>
-        <div className="container container--column">
-            <p>Current Vibe</p>
-            <p>Vaporwave Beats</p>
+        <div className="container container--column topBorder">
+            <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight', }}>Current Vibe</div>
+            <div style={{ marginTop: 6, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskRegular', }}>Vaporwave Beats</div>
 
         </div>
-        <div>
+        <div className="container--withoutPadding marginTop">
             <button className="route-big-button">
                 CHANGE VEHICLE VIBE
             </button>
