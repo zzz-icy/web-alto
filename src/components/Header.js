@@ -5,11 +5,11 @@ import logo from '../images/Alto_logo.png';
 
 const Header = () => (
     <header>
-        <div className="container">
+        <div className="container container--centered container--center">
             <img src={logo} alt='alto logo' className="header__img" />
             {/*A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.Adde is-active class to sass style file*/}
         </div>
-        <div className="container">
+        <div className="container container--centered container--center">
             <div className="nav__item">
                 <NavLink
                     exact to="/"

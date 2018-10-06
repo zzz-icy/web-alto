@@ -1,33 +1,68 @@
 .container {
     background: $background;
     max-width: 60rem;
-    margin: 0 auto;  // to center the container, not content inside
+    // margin: 0 auto;  // to center the container, not content inside
     padding: 0 $m-size;
     display: flex;
-    justify-content: center;
-    border-style: solid;
-    border-color: $black;
-    border-width: 0.5;
+    // border-style: solid;
+    // border-color: $black;
+    // border-width: 0.5;
 }
 
-.container-column {
-    background: $background;
-    max-width: 60rem;
-    margin: 0 auto;  // to center the container, not content inside
-    padding: 0 $m-size;
-    display: flex;
-    flex-direction: column;
-    border-style: solid;
-    border-color: $black;
-    border-width: 0.5;
+// center the container itself, if there is a container in another container, flex-start won't work with this margin setting
+.container--centered { 
+        margin: 0 auto;  // to center the container, not content inside
 }
-.container-spacearound {
+.container--center {
+    justify-content: center;
+}
+
+.container--column {
+    flex-direction: column;
+    // border-style: solid;
+    // border-color: $black;
+    // border-width: 0.5;
+}
+
+.container--flexstart {
+    justify-content: flex-start;
+
+    // border-style: solid;
+    // border-color: $black;
+    // border-width: 0.5;
+}
+.container--spacearound {
+    justify-content: space-around;
+
+    // border-style: solid;
+    // border-color: $black;
+    // border-width: 0.5;
+}
+
+.container-small {
+    
+    border-top-color: $dark-background;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.container--withoutPadding {
     background: $background;
     max-width: 60rem;
-    margin: 0 auto;  // to center the container, not content inside
-    padding: 0 $m-size;
+    // margin: 0 auto;  // to center the container, not content inside
+    // padding: 0 $m-size;
     display: flex;
-    border-style: solid;
-    border-color: $black;
-    border-width: 0.5;
+}
+
+.marginRight {
+    margin-right: 15;
+}
+
+.marginTop{
+    margin-top: $l-size;
+    // margin-bottom: $s-size;
+}
+
+.alignItems {
+    align-items: flex-end;
 }
