@@ -1,20 +1,22 @@
 import React from 'react';
 import map from '../images/Map_overview.png';
+import mapIcon from '../images/Map_icon.png';
+
 const RoutePage = () => (
     <div>
-        <div className="container-withoutPadding container--centered route__image">
+        <div className="container-withoutPadding container--centered">
+            <div className="route__image route__image--align">
 
-            <img
-                src={map}
-                alt="map overview"
-            // style={{
-            //     // maxWidth: 600,
-            //     // maxHeight: 600,
-            //     width: '100%',
-            //     height: 'auto',
-            // }}
-
-            />
+                <img
+                    src={map}
+                    alt="map overview"
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                    }}
+                />
+            </div>
+            <img src={mapIcon} alt="current location icon" style={{ position: 'absolute', right: 20 }} />
         </div>
         <div className="container">
             <p style={{ fontSize: 24 }}>Your Trip</p>

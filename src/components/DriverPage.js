@@ -2,8 +2,9 @@ import React from 'react';
 import driver from '../images/Driver_photo.png';
 
 const DriverPage = () => (
+
     <div className="container-withoutPadding container--centered" >
-        <div className="container-withoutPadding">
+        <div className="container-withoutPadding  container--centered driver__image">
 
             <img
                 src={driver}
@@ -28,6 +29,7 @@ const DriverPage = () => (
             </div>
         </div>
     </div>
+
 );
 
 
