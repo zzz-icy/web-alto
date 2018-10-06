@@ -55,9 +55,11 @@ class SummaryPage extends React.Component {
                     <img src={Edit} alt="Edit Icon" style={{ marginLeft: 10, height: 15, marginTop: 3 }} />
                 </div>
                 <div>
-                    <button disabled className="big-button">
-                        CANCEL TRIP
+                    <div className="container">
+                        <button disabled className="big-button">
+                            CANCEL TRIP
                 </button>
+                    </div>
                 </div>
             </div>
         );
