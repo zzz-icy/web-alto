@@ -23,19 +23,19 @@ const AutoPage = () => (
                 }}
             />
         </div>
-        <p style={{ color: 'rgb(172,120,109)' }}>YOUR VEHICLE</p>
-        <p style={{ fontSize: 48 }}> Alto 09</p>
-        <div className="container">
-            <div className="container container--column topBorder">
-                <p>Make/Model</p>
-                <p>2019 Volkswagen Atlas</p>
+        <p style={{ color: 'rgb(172,120,109)', fontSize: 10, fontFamily: 'PxGroteskRegular', letterSpacing: 2 }}>YOUR VEHICLE</p>
+        <p style={{ fontSize: 58, color: 'rgb(63,56,37)', fontFamily: 'PxGroteskLight', marginTop: 10 }}> Alto 09</p>
+        <div className="container container--spacebetween">
+            <div className="container--withoutPadding container--column topBorder marginLeft">
+                <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight', }}>Make/Model</div>
+                <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold', }}>2019 Volkswagen Atlas</div>
             </div>
-            <div className="container container--column topBorder">
-                <p>Color</p>
-                <p>Pure White</p>
+            <div className="container--withoutPadding container--column topBorder marginLeft">
+                <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight', }}>Color</div>
+                <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskBold', }}>Pure White</div>
             </div>
         </div>
-        <div>
+        <div className="container--withoutPadding bigMarginTop">
             <button disabled className="big-button">
                 IDENTIFY VEHICLE
                 </button>
