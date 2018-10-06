@@ -48,13 +48,10 @@ class SummaryPage extends React.Component {
                     <p style={{ margin: 0 }}>Irving, Texas 75216</p>
                 </div>
                 <div className="container marginTop">
-                    <input
-                        placeholder="Leave a note"
-                        value={this.state.text}
-                        size={60}
-                        className="summary__input"
-                        type='text'
-                    />
+
+                    <textarea rows="2" cols="30" className="summary__input">
+                        {this.state.text}
+                    </textarea>
                     <img src={Edit} alt="Edit Icon" style={{ marginLeft: 10, height: 15, marginTop: 3 }} />
                 </div>
                 <div>
@@ -71,3 +68,13 @@ class SummaryPage extends React.Component {
 
 
 export default SummaryPage;
+
+
+
+// <input
+// placeholder="Leave a note"
+// value={this.state.text}
+// size={50}
+// className="summary__input"
+// type='text'
+// />
