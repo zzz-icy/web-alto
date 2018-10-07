@@ -20,6 +20,14 @@
 
 .bottomBorder {
     // border-bottom: border-width border-style border-color|initial|inherit;
-    border-bottom: 1 solid $light-grey-green;
-    width: "30%";
+    border-top: 1px solid $light-grey-green;
+    width: 30%;
+}
+@media(min-width: $desktop-breakpoint) {
+    .driver__image {
+        max-width: 100%; 
+    }
+    // .title{
+    //     font-size: $l-size;
+    // }
 }

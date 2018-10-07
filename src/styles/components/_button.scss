@@ -4,12 +4,14 @@
     // border-bottom:.6rem solid darken($purple,10%); // sass reference functions
     color: $black;
     // font-weight: bold;
-    font-size: $m-size;
+    font-size: $s-size;
     width: 100%; // take up the whole width of its container
     margin-bottom: $m-size;
     margin-Top: $m-size;
     padding: 1.2rem;
     border-width: 1px;
     border-style: solid;
+    letter-spacing:2.5px;
+
     
     }

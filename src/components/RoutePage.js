@@ -3,7 +3,7 @@ import map from '../images/Map_overview.png';
 import mapIcon from '../images/Map_icon.png';
 
 const RoutePage = () => (
-    <div>
+    <div className="container container--centered container--column">
         <div className="container-withoutPadding container--centered">
             <div className="route__image route__image--align">
 

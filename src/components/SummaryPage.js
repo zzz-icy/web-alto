@@ -45,6 +45,8 @@ class SummaryPage extends React.Component {
                     <div>449 Flora St.</div>
                     <div>Dallas, Texas 75201</div>
                 </div>
+
+                <div className="bottomBorder marginTop" />
                 <div className="container--withoutPadding container--column marginTop ">
                     <p className="destination">DFW International Airport</p>
                     <p className="destination">American Airlines terminal E</p>

@@ -22,7 +22,7 @@ const AutoPage = () => (
         <p className="subtitle">YOUR VEHICLE</p>
         <p className="title">Alto 09</p>
 
-        <div className="container container--spacebetween">
+        <div className="container--withoutPadding container--spacebetween">
 
             <div className="container--withoutPadding container--column topBorder marginLeft">
                 <div className="lightfontitem">Make/Model</div>
