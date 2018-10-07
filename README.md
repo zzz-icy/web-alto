@@ -1,3 +1,5 @@
+https://web-alto.herokuapp.com/
+
 ## To run locally
 1. Download the ZIP to your local machine
 2. In the root folder of the project, run "yarn install"
