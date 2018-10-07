@@ -19,7 +19,7 @@ const RoutePage = () => (
             <img src={mapIcon} alt="current location icon" style={{ position: 'absolute', right: 20 }} />
         </div>
         <div className="container">
-            <p style={{ color: 'rgb(172,120,109)', fontSize: 10, fontFamily: 'PxGroteskRegular', letterSpacing: 2 }}>YOUR TRIP</p>
+            <p className="subtitle">YOUR TRIP</p>
         </div>
         <div className="container alignItems">
             <p style={{ fontSize: 48, margin: 0, fontFamily: 'PxGroteskLight' }}>5:39</p>

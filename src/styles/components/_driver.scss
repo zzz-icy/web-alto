@@ -3,3 +3,23 @@
     height: 'auto';
     max-width: 100%; 
 }
+
+.title {
+    font-size: 58px;
+    color: $brown;
+    font-family: 'PxGroteskLight';
+    margin-top: 10px
+}
+
+.subtitle {
+    color: $brick-red;
+    font-size: 10px;
+    font-family: 'PxGroteskRegular';
+    letter-spacing: 2px;
+}
+
+.bottomBorder {
+    // border-bottom: border-width border-style border-color|initial|inherit;
+    border-bottom: 1 solid $light-grey-green;
+    width: "30%";
+}
