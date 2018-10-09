@@ -9,6 +9,14 @@
     // border-width: 0.5;
 }
 
+.container--withoutPadding {
+    background: $background;
+    max-width: 60rem;
+    // margin: 0 auto;  // to center the container, not content inside
+    // padding: 0 $m-size;
+    display: flex;
+}
+
 // center the container itself, if there is a container in another container, flex-start won't work with this margin setting
 .container--centered { 
         margin: 0 auto;  // to center the container, not content inside
@@ -58,14 +66,6 @@
     border-top-color: $dark-background;
     border-top-style: solid;
     border-top-width: 1px;
-}
-
-.container--withoutPadding {
-    background: $background;
-    max-width: 60rem;
-    // margin: 0 auto;  // to center the container, not content inside
-    // padding: 0 $m-size;
-    display: flex;
 }
 
 .marginRight {
