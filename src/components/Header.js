@@ -39,11 +39,11 @@ const Header = () => (
 
             <div className="nav__item nav--marginRight">
                 <NavLink
-                    to="/auto"
+                    to="/vehicle"
                     activeClassName="is-active"
                     className="Nav_link"
                 >
-                    Auto
+                    Vehicle
                 </NavLink>
             </div>
 

@@ -8,7 +8,7 @@ import moment from 'moment';
 
 export class SummaryPage extends React.Component {
     componentDidMount() {
-        if (!this.props.trip) {
+        if (!this.props.data) {
             this.props.onloadTrip('trip');
         }
     }
@@ -22,8 +22,11 @@ export class SummaryPage extends React.Component {
         })
     }
     render() {
+        // this.props.onloadTrip('trip');
+        // console.log(this.props);
         const trip = this.props.data;
-        let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location;
+
+        let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location, name;
         if (trip) {
             time = moment(trip.estimated_arrival).format('LT').split(' ');
             // console.log(time);
@@ -34,6 +37,7 @@ export class SummaryPage extends React.Component {
             payment = trip.payment;
             dropoff_location = trip.dropoff_location;
             pickup_location = trip.pickup_location;
+            name = dropoff_location.name
         }
 
         // const { estimated_arrival } = trip.trip;
@@ -54,7 +58,7 @@ export class SummaryPage extends React.Component {
                 </div>
                 <div className="container--withoutPadding container--flexstart ">
                     <p style={{ marginTop: 0, fontFamily: 'PxGroteskLight', fontSize: 13, color: 'rgb(63,56,37)' }}>
-                        Estimated arrival at {dropoff_location.name}
+                        Estimated arrival at {name}
                     </p>
                 </div>
                 <div className="container--withoutPadding container--spacebetween marginTop">
@@ -135,11 +139,11 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => {
-    // console.log(state.mainReducer._root.entries[1][1]);
+    console.log(state);
     return {
         // trip: '1111111',
-        data: state.mainReducer._root.entries[1][1]
-        // trip: state.data
+        // data: state.mainReducer._root.entries[1][1]
+        data: state.data
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);

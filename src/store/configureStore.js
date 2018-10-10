@@ -10,14 +10,14 @@ import mySaga from '../sagas/saga';
 export const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default () => {
+export default (initialState = {}) => {
     const store = createStore(
         // register each reducer here
-        combineReducers({
-            mainReducer: myReducer,
-        }),
+        // combineReducers({
+        //     mainReducer: myReducer,
+        // }),
         // fromJS(initialState),
-        // myReducer,
+        myReducer,
         composeEnhancers(applyMiddleware(sagaMiddleware))
         // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
