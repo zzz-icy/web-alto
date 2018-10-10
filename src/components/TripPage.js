@@ -8,9 +8,9 @@ import moment from 'moment';
 
 export class TripPage extends React.Component {
     componentDidMount() {
-        // if (!this.props.trip) {
-        this.props.onloadTrip('trip');
-        // }
+        if (!this.props.trip) {
+            this.props.onloadTrip();
+        }
     }
 
     state = {

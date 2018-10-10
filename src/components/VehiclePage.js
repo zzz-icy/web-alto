@@ -5,9 +5,9 @@ import vehicle_pic from '../images/Vehicle_photo.png';
 
 class VehiclePage extends React.Component {
     componentDidMount() {
-        // if (!this.props.data) {
-        this.props.onloadVehicle('vehicle');
-        // }
+        if (!this.props.vehicle) {
+            this.props.onloadVehicle();
+        }
     }
     render() {
         const { vehicle } = this.props;

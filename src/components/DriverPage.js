@@ -5,9 +5,9 @@ import driver_pic from '../images/Driver_photo.png';
 
 export class DriverPage extends React.Component {
     componentDidMount() {
-        // if (!this.props.data) {
-        this.props.onloadDriver('driver');
-        // }
+        if (!this.props.driver) {
+            this.props.onloadDriver();
+        }
     }
     render() {
         const driver = this.props.driver;

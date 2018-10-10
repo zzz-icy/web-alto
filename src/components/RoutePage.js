@@ -2,15 +2,17 @@ import React from 'react';
 import map from '../images/Map_overview.png';
 import { connect } from 'react-redux';
 import { loadVibe } from '../actions/vibe';
+import { loadTrip } from '../actions/trip';
 import moment from 'moment';
 import mapIcon from '../images/Map_icon.png';
 
 class RoutePage extends React.Component {
 
     componentDidMount() {
-        // if (!this.props.vibe) {
-        this.props.onloadVibe('vibe');
-        // }
+        if (!this.props.vibe) {
+            this.props.onloadVibe();
+            this.props.onloadTrip();
+        }
     }
 
     render() {
@@ -73,7 +75,9 @@ class RoutePage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onloadVibe: () => (dispatch(loadVibe()))
+    onloadVibe: () => (dispatch(loadVibe())),
+    onloadTrip: () => (dispatch(loadTrip()))
+
 });
 const mapStateToProps = (state) => {
     // console.log(state.mainReducer._root.entries[1][1]);
