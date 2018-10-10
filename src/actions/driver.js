@@ -1,6 +1,6 @@
 // LOAD_DRIVER
 
-export const loadVehicle = (driver) => ({
+const loadVehicle = (driver) => ({
     type: 'LOAD_DRIVER',
     driver
 });

@@ -7,6 +7,11 @@ class SummaryPage extends React.Component {
     state = {
         text: "Can you drop me off at AA International Bag Drop please?",
     }
+    onNoteChange = (e) => {
+        this.setState({
+            text: e.target.value
+        })
+    }
     render() {
         return (
             <div className="container container--centered container--column">
@@ -54,9 +59,14 @@ class SummaryPage extends React.Component {
                 </div>
                 <div className="container--withoutPadding marginTop">
 
-                    <textarea rows="2" cols="30" className="summary__input">
-                        {this.state.text}
-                    </textarea>
+                    <textarea
+                        rows="2"
+                        cols="30"
+                        className="summary__input"
+                        value={this.state.text}
+                        onChange={this.onNoteChange}
+                    // wrong: if use this.onChange()
+                    />
                     <img
                         src={Edit}
                         alt="Edit Icon"
