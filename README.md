@@ -1,4 +1,3 @@
-https://web-alto.herokuapp.com/
 
 ## To run locally
 1. Download the ZIP to your local machine and unzip the file
@@ -9,3 +8,6 @@ https://web-alto.herokuapp.com/
 ## Now open your browser and visit:
 
 localhost:3000
+
+Hardcoded data version:
+https://web-alto.herokuapp.com/
