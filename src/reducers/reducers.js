@@ -1,14 +1,19 @@
-const myReducerDefaultState = [];
-export const myReducer = (state = myReducerDefaultState, action) => {
+
+const initialState = {
+    fetching: false,
+    data: null,
+    error: null
+};
+
+
+export const myReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOAD_TRIP':
-            return action.trip;
-        case 'LOAD_DRIVER':
-            return action.driver;
-        case 'LOAD_VEHICLE':
-            return action.vehicle;
-        case 'VIBE':
-            return action.vibe;
+        case 'LOAD_DATA_REQUEST':
+            return { ...state, fetching: true, error: null };
+        case 'LOAD_DATA_SUCCESS':
+            return { ...state, fetching: false, data: action.data, error: null };
+        case 'LOAD_DATA_FAILURE':
+            return { ...state, fetching: false, data: null, error: action.error };
         default:
             return state;
     }
