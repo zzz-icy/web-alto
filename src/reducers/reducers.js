@@ -9,11 +9,16 @@ const initialState = {
 export const myReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOAD_DATA_REQUEST':
-            return { ...state, fetching: true, error: null };
+            return state.set('fetching', true)
+                .set('error', null);
         case 'LOAD_DATA_SUCCESS':
-            return { ...state, fetching: false, data: action.data, error: null };
+            return state.set('fetching', false)
+                .set('data', action.data)
+                .set('error', null);
         case 'LOAD_DATA_FAILURE':
-            return { ...state, fetching: false, data: null, error: action.error };
+            return state.set('fetching', false)
+                .set('data', null)
+                .set('error', action.error);
         default:
             return state;
     }

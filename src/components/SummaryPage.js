@@ -5,11 +5,11 @@ import Info from '../images/Info_icon.png';
 import { loadData } from '../actions/trip'
 
 class SummaryPage extends React.Component {
-    componentDidMount() {
-        if (!this.props.trip) {
-            this.props.onloadTrip();
-        }
-    }
+    // componentDidMount() {
+    //     if (!this.props.trip) {
+    //         this.props.onloadTrip();
+    //     }
+    // }
 
     state = {
         text: "Can you drop me off at AA International Bag Drop please?",
