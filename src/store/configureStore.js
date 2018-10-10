@@ -1,5 +1,6 @@
 // store creation
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+// import { fromJS } from 'immutable';
 import createSagaMiddleware from 'redux-saga'
 import myReducer from '../reducers/reducers';
 import mySaga from '../sagas/saga';
@@ -15,11 +16,13 @@ export default () => {
         combineReducers({
             mainReducer: myReducer,
         }),
-
+        // fromJS(initialState),
+        // myReducer,
         composeEnhancers(applyMiddleware(sagaMiddleware))
         // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
     );
+
     sagaMiddleware.run(mySaga);
 
     return store;

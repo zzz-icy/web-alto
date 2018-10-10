@@ -1,12 +1,13 @@
+import { fromJS } from 'immutable';
 
-const initialState = {
+const initialState = fromJS({
     fetching: false,
     data: null,
     error: null
-};
+});
 
 
-export const myReducer = (state = initialState, action) => {
+const myReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'LOAD_DATA_REQUEST':
             return state.set('fetching', true)

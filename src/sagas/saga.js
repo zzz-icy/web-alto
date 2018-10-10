@@ -3,7 +3,7 @@ import request from '../request';
 import { loadDataSuccess, loadDataError } from '../actions/trip'
 export function* fetchData() {
 
-    // const requestURL = '/api/trip';
+    // const requestURL = '/fakeapi/trip';
     const requestURL = 'http://localhost:3001/trip';
     try {
         // Call our request helper (see 'utils/request')

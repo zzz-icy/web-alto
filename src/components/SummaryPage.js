@@ -1,15 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import numeral from 'numeral';
 import Edit from '../images/Edit_icon.png';
 import Info from '../images/Info_icon.png';
-import { loadData } from '../actions/trip'
+import { loadData } from '../actions/trip';
+import moment from 'moment';
 
-class SummaryPage extends React.Component {
-    // componentDidMount() {
-    //     if (!this.props.trip) {
-    //         this.props.onloadTrip();
-    //     }
-    // }
+export class SummaryPage extends React.Component {
+    componentDidMount() {
+        if (!this.props.trip) {
+            this.props.onloadTrip();
+        }
+    }
 
     state = {
         text: "Can you drop me off at AA International Bag Drop please?",
@@ -20,8 +22,24 @@ class SummaryPage extends React.Component {
         })
     }
     render() {
-        const { trip } = this.props;
-        console.log(trip);
+        console.log(this.props);
+
+        const trip = this.props.trip;
+        let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location;
+        if (trip) {
+            time = moment(trip.estimated_arrival).format('LT').split(' ');
+            // console.log(time);
+            est_fare_min = numeral(trip.estimated_fare_min / 100).format('$0,0.00');
+            est_fare_max = numeral(trip.estimated_fare_max / 100).format('$0,0.00');
+            psg_min = trip.passengers_min;
+            psg_max = trip.passengers_max;
+            payment = trip.payment;
+            dropoff_location = trip.dropoff_location;
+            pickup_location = trip.pickup_location;
+        }
+
+        // const { estimated_arrival } = trip.trip;
+        // console.log(moment(estimated_arrival));
         if (!trip) return null;
         return (
             <div className="container container--centered container--column">
@@ -29,43 +47,62 @@ class SummaryPage extends React.Component {
                     <p style={{ fontSize: 24, color: 'rgb(63,56,37)' }}>Your Trip</p>
                 </div>
                 <div className="container--withoutPadding alignItems">
-                    <p style={{ fontSize: 48, margin: 0, fontFamily: 'PxGroteskLight' }}>5:39</p>
-                    <p style={{ fontSize: 30, margin: 0, paddingLeft: 10, paddingBottom: 5, fontFamily: 'PxGroteskLight' }}>PM</p>
+                    <p style={{ fontSize: 48, margin: 0, fontFamily: 'PxGroteskLight' }}>
+                        {time[0]}
+                    </p>
+                    <p style={{ fontSize: 30, margin: 0, paddingLeft: 10, paddingBottom: 5, fontFamily: 'PxGroteskLight' }}>
+                        {time[1]}
+                    </p>
                 </div>
                 <div className="container--withoutPadding container--flexstart ">
-                    <p style={{ marginTop: 0, fontFamily: 'PxGroteskLight', fontSize: 13, color: 'rgb(63,56,37)' }}>Estimated arrival at DFW Int'l Airport - Terminal E</p>
+                    <p style={{ marginTop: 0, fontFamily: 'PxGroteskLight', fontSize: 13, color: 'rgb(63,56,37)' }}>
+                        Estimated arrival at {dropoff_location.name}
+                    </p>
                 </div>
                 <div className="container--withoutPadding container--spacebetween marginTop">
 
                     <div className="container--withoutPadding container--column topBorder marginLeft percentageWidth">
                         <div className="font--brownPxGroteskLight">Estimated Fare:</div>
                         <div className=" container--withoutPadding container-flexstart ">
-                            <div className="font--greygreenPxGroteskRegular">$65 - $75</div>
+                            <div className="font--greygreenPxGroteskRegular">
+                                {est_fare_min} - {est_fare_max}
+                            </div>
                             <img src={Info} alt="Info Icon" style={{ marginLeft: 8, marginTop: 6, height: 11, width: 'auto' }} />
                         </div>
                     </div>
 
                     <div className="container--withoutPadding container--column topBorder marginLeft percentageWidth">
                         <div className="font--brownPxGroteskLight">Passenger:</div>
-                        <div className="font--greygreenPxGroteskRegular" >1 - 5</div>
+                        <div className="font--greygreenPxGroteskRegular" >
+                            {psg_min} - {psg_max}
+                        </div>
                     </div>
 
                     <div className="container--withoutPadding container--column topBorder marginLeft percentageWidth ">
-                        <div className="font--brownPxGroteskLight">Payment:</div>
-                        <div className="font--greygreenPxGroteskRegular">Amex01</div>
+                        <div className="font--brownPxGroteskLight">payment:</div>
+                        <div className="font--greygreenPxGroteskRegular">{payment}:</div>
                     </div>
 
                 </div>
                 <div className="container--withoutPadding container--column marginTop font--greygreenPxGroteskLight">
-                    <div>449 Flora St.</div>
-                    <div>Dallas, Texas 75201</div>
+                    {pickup_location.street_line1 && <div> {pickup_location.street_line1}</div>}
+                    {pickup_location.street_line2 && <div> {pickup_location.street_line2}</div>}
+                    <div>
+                        {pickup_location.city && <span>{pickup_location.city}, </span>}
+                        {pickup_location.state && <span>{pickup_location.state}</span>}
+                        {pickup_location.zipcode && <span>{pickup_location.zipcode}</span>}
+                    </div>
                 </div>
 
                 <div className="bottomBorder marginTop" />
                 <div className="container--withoutPadding container--column marginTop ">
-                    <p className="destination">DFW International Airport</p>
-                    <p className="destination">American Airlines terminal E</p>
-                    <p className="destination">Irving, Texas 75216</p>
+                    {dropoff_location.street_line1 && <p className="destination">{dropoff_location.street_line1}</p>}                    {dropoff_location.street_line2 && <p className="destination">{dropoff_location.street_line2}</p>}
+                    <p className="destination">
+                        {pickup_location.city && <span>{dropoff_location.city}, </span>}
+                        {pickup_location.state && <span>{dropoff_location.state}</span>}
+                        {pickup_location.zipcode && <span>{dropoff_location.zipcode}</span>}
+                    </p>
+
                 </div>
                 <div className="container--withoutPadding marginTop">
 
@@ -99,9 +136,14 @@ const mapDispatchToProps = (dispatch) => ({
     onloadTrip: () => (dispatch(loadData()))
 });
 
-const mapStateToProps = (state) => ({
-    trip: state.data
-});
+const mapStateToProps = (state) => {
+    // console.log(state.mainReducer._root.entries[1][1]);
+    return {
+        // trip: '1111111',
+        trip: state.mainReducer._root.entries[1][1]
+        // trip: state.data
+    };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);
 
 

@@ -7,16 +7,16 @@ import * as serviceWorker from './serviceWorker';
 import './styles/styles.scss';
 import './index.css';
 import configureStore from './store/configureStore';
-import { loadData } from './actions/trip';
+// import { loadData } from './actions/trip';
 // import sagaMiddleware from './store/configureStore';
 // import mySaga from './sagas/saga';
 
 const store = configureStore();
 
-store.dispatch(loadData());
+// store.dispatch(loadData());
 
-const state = store.getState();
-console.log(state);
+// const state = store.getState();
+// console.log(state.data);
 
 const jsx = (
     <Provider store={store}>
