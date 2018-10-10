@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SummaryPage from '../components/SummaryPage';
+import TripPage from '../components/TripPage';
 import DriverPage from '../components/DriverPage';
 import VehiclePage from '../components/VehiclePage';
 import RoutePage from '../components/RoutePage';
@@ -16,7 +16,7 @@ const AppRouter = () => (
         <div>
             <Header />
             <Switch>
-                <Route exact path="/" component={SummaryPage} />
+                <Route exact path="/" component={TripPage} />
                 <Route path="/driver" component={DriverPage} />
                 <Route path="/vehicle" component={VehiclePage} />
                 <Route path="/route" component={RoutePage} />

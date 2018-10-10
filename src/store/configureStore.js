@@ -1,34 +1,40 @@
 // store creation
 import {
     createStore,
-    // combineReducers,
+    combineReducers,
     applyMiddleware,
     compose
-} from 'redux';
+} from '../../../../../../../Library/Caches/typescript/2.9/node_modules/redux';
 // import { fromJS } from 'immutable';
 import createSagaMiddleware from 'redux-saga'
-import myReducer from '../reducers/reducers';
-import mySaga from '../sagas/saga';
+import tripReducer from '../reducers/tripReducers';
+import vehicleReducer from '../reducers/vehicleReducer';
+import driverReducer from '../reducers/driverReducer';
+import vibeReducer from '../reducers/vibeReducer';
+
+import rootSaga from '../sagas/sagas';
 
 // will do the following in the index.js
 // const store = configureStore();
 export const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default (initialState = {}) => {
+export default () => {
     const store = createStore(
         // register each reducer here
-        // combineReducers({
-        //     mainReducer: myReducer,
-        // }),
+        combineReducers({
+            trip: tripReducer,
+            vehicle: vehicleReducer,
+            driver: driverReducer,
+            vibe: vibeReducer
+        }),
         // fromJS(initialState),
-        myReducer,
         composeEnhancers(applyMiddleware(sagaMiddleware))
         // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
     );
 
-    sagaMiddleware.run(mySaga);
+    sagaMiddleware.run(rootSaga);
 
     return store;
 };

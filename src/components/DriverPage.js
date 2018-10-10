@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../actions/trip';
+import { loadDriver } from '../actions/driver';
 import driver_pic from '../images/Driver_photo.png';
 
 export class DriverPage extends React.Component {
     componentDidMount() {
-        if (!this.props.data) {
-            this.props.onloadDriver('driver');
-        }
+        // if (!this.props.data) {
+        this.props.onloadDriver('driver');
+        // }
     }
     render() {
         const driver = this.props.driver;
@@ -15,7 +15,6 @@ export class DriverPage extends React.Component {
         // if (driver) {
         //     driver_pic = driver.image;
         // }
-        console.log(driver);
         if (!driver) return null;
         return (
             <div className="container container--centered container--column">
@@ -55,13 +54,15 @@ export class DriverPage extends React.Component {
     }
 }
 const mapDispatchToProps = (dispatch) => ({
-    onloadDriver: (data) => (dispatch(loadData(data)))
+    onloadDriver: () => (dispatch(loadDriver()))
 });
 const mapStateToProps = (state) => {
     // console.log(state._root.entries[1][1]);
+    console.log(state);
+
     return {
         // driver: state._root.entries[1][1]
-        driver: state.data
+        driver: state.driver.driver
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DriverPage);

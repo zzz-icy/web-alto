@@ -1,25 +1,30 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import request from '../request';
-import { loadDataSuccess, loadDataError } from '../actions/trip'
-export function* fetchData(action) {
+import { loadDriverSuccess, loadDriverError } from '../actions/driver'
+
+
+
+export function* fetchDriver() {
 
     // const requestURL = '/fakeapi/trip';
-    const requestURL = `http://localhost:3001/${action.pageName}`;
+    const requestURL = 'http://localhost:3001/driver';
     try {
         // Call our request helper (see 'utils/request')
         // need to be fixed, if signed out, won't work
         const data = yield call(request, requestURL);
         console.log(data);
-        yield put(loadDataSuccess(data));
+        yield put(loadDriverSuccess(data));
     } catch (err) {
-        yield put(loadDataError(err));
+        yield put(loadDriverError(err));
     }
 }
 
 
-function* mySaga() {
-    yield takeLatest("LOAD_DATA_REQUEST", fetchData);
+
+function* driverSaga() {
+    yield takeLatest("LOAD_DRIVER_REQUEST", fetchDriver);
+
 }
 
-export default mySaga;
+export default driverSaga;
 

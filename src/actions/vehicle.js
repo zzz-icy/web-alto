@@ -1,6 +1,15 @@
-// LOAD_VEHICLE
+// LOAD_DRIVER
 
-export const loadVehicle = (vehicle) => ({
-    type: 'LOAD_VEHICLE',
-    vehicle
+export const loadVehicle = () => ({
+    type: 'LOAD_VEHICLE_REQUEST',
+});
+
+export const loadVehicleSuccess = (data) => ({
+    type: 'LOAD_VEHICLE_SUCCESS',
+    data
+});
+
+export const loadVehicleError = (error) => ({
+    type: 'LOAD_VEHICLE_FAILURE',
+    error
 });

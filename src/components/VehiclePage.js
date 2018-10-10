@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../actions/trip';
+import { loadVehicle } from '../actions/vehicle';
 import vehicle_pic from '../images/Vehicle_photo.png';
 
 class VehiclePage extends React.Component {
@@ -58,12 +58,14 @@ class VehiclePage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onloadVehicle: (data) => (dispatch(loadData(data)))
+    onloadVehicle: () => (dispatch(loadVehicle()))
 });
 const mapStateToProps = (state) => {
     // console.log(state.mainReducer._root.entries[1][1]);
+    console.log(state);
+
     return {
-        vehicle: state.data
+        vehicle: state.vehicle.vehicle
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(VehiclePage);

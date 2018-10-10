@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import numeral from 'numeral';
 import Edit from '../images/Edit_icon.png';
 import Info from '../images/Info_icon.png';
-import { loadData } from '../actions/trip';
+import { loadTrip } from '../actions/trip';
 import moment from 'moment';
 
-export class SummaryPage extends React.Component {
+export class TripPage extends React.Component {
     componentDidMount() {
-        if (!this.props.data) {
-            this.props.onloadTrip('trip');
-        }
+        // if (!this.props.trip) {
+        this.props.onloadTrip('trip');
+        // }
     }
 
     state = {
@@ -151,7 +151,7 @@ export class SummaryPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onloadTrip: (pageName) => (dispatch(loadData(pageName)))
+    onloadTrip: () => (dispatch(loadTrip()))
 });
 
 const mapStateToProps = (state) => {
@@ -159,10 +159,10 @@ const mapStateToProps = (state) => {
     return {
         // trip: '1111111',
         // trip: state._root.entries[1][1]
-        trip: state.data
+        trip: state.trip.trip
     };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TripPage);
 
 
 
