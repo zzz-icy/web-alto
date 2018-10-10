@@ -1,11 +1,3 @@
-// import { fromJS } from 'immutable';
-
-// const initialState = fromJS({
-//     fetching: false,
-//     data: null,
-//     error: null
-// });
-
 const initialState = {
     driver_fetching: false,
     driver: null,

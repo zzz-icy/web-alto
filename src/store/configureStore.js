@@ -4,7 +4,7 @@ import {
     combineReducers,
     applyMiddleware,
     compose
-} from '../../../../../../../Library/Caches/typescript/2.9/node_modules/redux';
+} from 'redux';
 // import { fromJS } from 'immutable';
 import createSagaMiddleware from 'redux-saga'
 import tripReducer from '../reducers/tripReducers';
