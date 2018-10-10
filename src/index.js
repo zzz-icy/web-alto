@@ -7,8 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import './styles/styles.scss';
 import './index.css';
 import configureStore from './store/configureStore';
-import sagaMiddleware from './store/configureStore';
-import mySaga from './sagas/saga';
+// import sagaMiddleware from './store/configureStore';
+// import mySaga from './sagas/saga';
 
 const store = configureStore();
 const jsx = (
@@ -16,7 +16,6 @@ const jsx = (
         <App />
     </Provider>
 );
-sagaMiddleware.run(mySaga);
 ReactDOM.render(jsx, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

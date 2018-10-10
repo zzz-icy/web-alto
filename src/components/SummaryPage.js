@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Edit from '../images/Edit_icon.png';
 import Info from '../images/Info_icon.png';
-
+import { loadData } from '../actions/trip'
 
 class SummaryPage extends React.Component {
+    componentDidMount() {
+        if (!this.props.trip) {
+            this.props.onloadTrip();
+        }
+    }
+
     state = {
         text: "Can you drop me off at AA International Bag Drop please?",
     }
@@ -13,6 +20,9 @@ class SummaryPage extends React.Component {
         })
     }
     render() {
+        const { trip } = this.props;
+        console.log(trip);
+        if (!trip) return null;
         return (
             <div className="container container--centered container--column">
                 <div className="container--withoutPadding">
@@ -85,10 +95,14 @@ class SummaryPage extends React.Component {
     }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+    onloadTrip: () => (dispatch(loadData()))
+});
 
-
-
-export default SummaryPage;
+const mapStateToProps = (state) => ({
+    trip: state.data
+});
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);
 
 
 

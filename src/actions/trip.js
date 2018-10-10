@@ -8,7 +8,7 @@ export const loadDataSuccess = (data) => ({
     data
 });
 
-export const loadDataErro = (error) => ({
+export const loadDataError = (error) => ({
     type: 'LOAD_DATA_FAILURE',
     error
 });

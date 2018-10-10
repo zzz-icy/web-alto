@@ -1,29 +1,25 @@
-// import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest } from 'redux-saga/effects'
+import request from '../request';
+import { loadDataSuccess, loadDataError } from '../actions/trip'
+export function* fetchData() {
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
-// function* fetchData(action) {
-//     try {
-//         const user = yield call(Api.fetchUser, action.payload.userId);
-//         yield put({ type: "USER_FETCH_SUCCEEDED", user: user });
-//     } catch (e) {
-//         yield put({ type: "USER_FETCH_FAILED", message: e.message });
-//     }
-// }
-
-
-// /*
-//   Alternatively you may use takeLatest.
-
-//   Does not allow concurrent fetches of user. If "USER_FETCH_REQUESTED" gets
-//   dispatched while a fetch is already pending, that pending fetch is cancelled
-//   and only the latest one will be run.
-// */
-// function* mySaga() {
-//     yield takeLatest("USER_FETCH_REQUESTED", fetchUser);
-// }
-
-// export default mySaga;
-
-export default function* mySaga() {
-    // yield takeLatest("USER_FETCH_REQUESTED", fetchUser);
+    // const requestURL = '/api/trip';
+    const requestURL = 'http://localhost:3001/trip';
+    try {
+        // Call our request helper (see 'utils/request')
+        // need to be fixed, if signed out, won't work
+        const data = yield call(request, requestURL);
+        console.log(data);
+        yield put(loadDataSuccess(data));
+    } catch (err) {
+        yield put(loadDataError(err));
+    }
 }
+
+
+function* mySaga() {
+    yield takeLatest("LOAD_DATA_REQUEST", fetchData);
+}
+
+export default mySaga;
+
