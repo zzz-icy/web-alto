@@ -8,7 +8,7 @@ import moment from 'moment';
 
 export class SummaryPage extends React.Component {
     componentDidMount() {
-        if (!this.props.data) {
+        if (!this.props.trip) {
             this.props.onloadTrip('trip');
         }
     }
@@ -24,21 +24,37 @@ export class SummaryPage extends React.Component {
     render() {
         // this.props.onloadTrip('trip');
         // console.log(this.props);
-        const trip = this.props.data;
+        const trip = this.props.trip;
 
-        let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location, name;
+        let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location, dropoff_name, dropoff_zipcode, dropoff_city, dropoff_state, dropoff_street_line1, dropoff_street_line2, pickup_street_line1, pickup_street_line2, pickup_state, pickup_city, pickup_zipcode;
         if (trip) {
             time = moment(trip.estimated_arrival).format('LT').split(' ');
             // console.log(time);
-            est_fare_min = numeral(trip.estimated_fare_min / 100).format('$0,0.00');
-            est_fare_max = numeral(trip.estimated_fare_max / 100).format('$0,0.00');
+            est_fare_min = numeral(trip.estimated_fare_min / 100).format('$0,0');
+            est_fare_max = numeral(trip.estimated_fare_max / 100).format('$0,0');
             psg_min = trip.passengers_min;
             psg_max = trip.passengers_max;
             payment = trip.payment;
             dropoff_location = trip.dropoff_location;
             pickup_location = trip.pickup_location;
-            name = dropoff_location.name
+            if (dropoff_location) {
+                dropoff_name = dropoff_location.name
+                dropoff_street_line1 = dropoff_location.street_line1;
+                dropoff_street_line2 = dropoff_location.street_line2;
+                dropoff_state = dropoff_location.state;
+                dropoff_city = dropoff_location.city;
+                dropoff_zipcode = dropoff_location.zipcode;
+            }
+            if (pickup_location) {
+                // pickup_name = pickup_location.name
+                pickup_street_line1 = pickup_location.street_line1;
+                pickup_street_line2 = pickup_location.street_line2;
+                pickup_state = pickup_location.state;
+                pickup_city = pickup_location.city;
+                pickup_zipcode = pickup_location.zipcode;
+            }
         }
+
 
         // const { estimated_arrival } = trip.trip;
         // console.log(moment(estimated_arrival));
@@ -58,7 +74,7 @@ export class SummaryPage extends React.Component {
                 </div>
                 <div className="container--withoutPadding container--flexstart ">
                     <p style={{ marginTop: 0, fontFamily: 'PxGroteskLight', fontSize: 13, color: 'rgb(63,56,37)' }}>
-                        Estimated arrival at {name}
+                        Estimated arrival at {dropoff_name}
                     </p>
                 </div>
                 <div className="container--withoutPadding container--spacebetween marginTop">
@@ -87,22 +103,22 @@ export class SummaryPage extends React.Component {
 
                 </div>
                 <div className="container--withoutPadding container--column marginTop font--greygreenPxGroteskLight">
-                    {pickup_location.street_line1 && <div> {pickup_location.street_line1}</div>}
-                    {pickup_location.street_line2 && <div> {pickup_location.street_line2}</div>}
+                    <div> {pickup_street_line1}</div>
+                    {pickup_street_line2 && <div> {pickup_street_line2}</div>}
                     <div>
-                        {pickup_location.city && <span>{pickup_location.city}, </span>}
-                        {pickup_location.state && <span>{pickup_location.state}</span>}
-                        {pickup_location.zipcode && <span>{pickup_location.zipcode}</span>}
+                        {pickup_city && <span>{pickup_city}, </span>}
+                        {pickup_state && <span>{pickup_state}</span>}
+                        {pickup_zipcode && <span>{pickup_zipcode}</span>}
                     </div>
                 </div>
 
                 <div className="bottomBorder marginTop" />
                 <div className="container--withoutPadding container--column marginTop ">
-                    {dropoff_location.street_line1 && <p className="destination">{dropoff_location.street_line1}</p>}                    {dropoff_location.street_line2 && <p className="destination">{dropoff_location.street_line2}</p>}
+                    {dropoff_street_line1 && <p className="destination">{dropoff_street_line1}</p>}                    {dropoff_street_line2 && <p className="destination">{dropoff_street_line2}</p>}
                     <p className="destination">
-                        {pickup_location.city && <span>{dropoff_location.city}, </span>}
-                        {pickup_location.state && <span>{dropoff_location.state}</span>}
-                        {pickup_location.zipcode && <span>{dropoff_location.zipcode}</span>}
+                        {pickup_city && <span>{dropoff_city}, </span>}
+                        {pickup_state && <span>{dropoff_state}</span>}
+                        {pickup_zipcode && <span>{dropoff_zipcode}</span>}
                     </p>
 
                 </div>
@@ -143,7 +159,7 @@ const mapStateToProps = (state) => {
     return {
         // trip: '1111111',
         // data: state.mainReducer._root.entries[1][1]
-        data: state.data
+        trip: state.data
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);

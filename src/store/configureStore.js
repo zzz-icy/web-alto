@@ -1,5 +1,10 @@
 // store creation
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import {
+    createStore,
+    // combineReducers,
+    applyMiddleware,
+    compose
+} from 'redux';
 // import { fromJS } from 'immutable';
 import createSagaMiddleware from 'redux-saga'
 import myReducer from '../reducers/reducers';
