@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import request from '../request';
 import { loadDataSuccess, loadDataError } from '../actions/trip'
-export function* fetchData() {
+export function* fetchData(action) {
 
     // const requestURL = '/fakeapi/trip';
-    const requestURL = 'http://localhost:3001/trip';
+    const requestURL = `http://localhost:3001/${action.pageName}`;
     try {
         // Call our request helper (see 'utils/request')
         // need to be fixed, if signed out, won't work

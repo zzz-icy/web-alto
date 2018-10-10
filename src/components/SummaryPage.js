@@ -9,7 +9,7 @@ import moment from 'moment';
 export class SummaryPage extends React.Component {
     componentDidMount() {
         if (!this.props.trip) {
-            this.props.onloadTrip();
+            this.props.onloadTrip('trip');
         }
     }
 
@@ -22,9 +22,7 @@ export class SummaryPage extends React.Component {
         })
     }
     render() {
-        console.log(this.props);
-
-        const trip = this.props.trip;
+        const trip = this.props.data;
         let time, est_fare_min, est_fare_max, psg_min, psg_max, payment, dropoff_location, pickup_location;
         if (trip) {
             time = moment(trip.estimated_arrival).format('LT').split(' ');
@@ -133,14 +131,14 @@ export class SummaryPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onloadTrip: () => (dispatch(loadData()))
+    onloadTrip: (pageName) => (dispatch(loadData(pageName)))
 });
 
 const mapStateToProps = (state) => {
     // console.log(state.mainReducer._root.entries[1][1]);
     return {
         // trip: '1111111',
-        trip: state.mainReducer._root.entries[1][1]
+        data: state.mainReducer._root.entries[1][1]
         // trip: state.data
     };
 };
