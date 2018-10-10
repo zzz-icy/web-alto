@@ -5,12 +5,12 @@ import driver_pic from '../images/Driver_photo.png';
 
 export class DriverPage extends React.Component {
     componentDidMount() {
-        if (!this.props.driver) {
+        if (!this.props.data) {
             this.props.onloadDriver('driver');
         }
     }
     render() {
-        const driver = this.props.data;
+        const driver = this.props.driver;
         // let driver_pic;
         // if (driver) {
         //     driver_pic = driver.image;
@@ -58,9 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
     onloadDriver: (data) => (dispatch(loadData(data)))
 });
 const mapStateToProps = (state) => {
-    // console.log(state.mainReducer._root.entries[1][1]);
+    // console.log(state._root.entries[1][1]);
     return {
-        data: state.data
+        // driver: state._root.entries[1][1]
+        driver: state.data
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DriverPage);

@@ -8,7 +8,7 @@ import moment from 'moment';
 
 export class SummaryPage extends React.Component {
     componentDidMount() {
-        if (!this.props.trip) {
+        if (!this.props.data) {
             this.props.onloadTrip('trip');
         }
     }
@@ -158,7 +158,7 @@ const mapStateToProps = (state) => {
     console.log(state);
     return {
         // trip: '1111111',
-        // data: state.mainReducer._root.entries[1][1]
+        // trip: state._root.entries[1][1]
         trip: state.data
     };
 };

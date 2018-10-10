@@ -7,9 +7,9 @@ import mapIcon from '../images/Map_icon.png';
 class RoutePage extends React.Component {
 
     componentDidMount() {
-        if (!this.props.vibe) {
-            this.props.onloadVibe('vibe');
-        }
+        // if (!this.props.vibe) {
+        this.props.onloadVibe('vibe');
+        // }
     }
 
     render() {

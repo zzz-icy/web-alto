@@ -24,7 +24,6 @@ const myReducer = (state = initialState, action) => {
             //     .set('data', action.data)
             //     .set('error', null);
             return { ...state, fetching: false, data: action.data }
-
         case 'LOAD_DATA_FAILURE':
             // return state.set('fetching', false)
             //     .set('data', null)
