@@ -31,6 +31,11 @@
 }
 
 .route__image--align {
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
+.route__image--alignself {
+    // align-self: flex-end;
+    position:relative;
+    left: 90%
+}
