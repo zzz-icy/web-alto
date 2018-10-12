@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+// import App from './App';
+import AppRouter from './routes/AppRouter';
+
 import * as serviceWorker from './serviceWorker';
 import './styles/styles.scss';
 import './index.css';
@@ -20,7 +22,7 @@ const store = configureStore();
 
 const jsx = (
     <Provider store={store}>
-        <App />
+        <AppRouter />
     </Provider>
 );
 ReactDOM.render(jsx, document.getElementById('root'));

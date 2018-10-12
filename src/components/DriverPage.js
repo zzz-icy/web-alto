@@ -11,6 +11,13 @@ export class DriverPage extends React.Component {
     }
     render() {
         const driver = this.props.driver;
+        // let images = require.context('../images', true);
+        // let img_src;
+
+        // if (driver) {
+        //     img_src = require.context(`./${driver.image}`);
+        // }
+
         // let driver_pic;
         // if (driver) {
         //     driver_pic = driver.image;
@@ -22,6 +29,7 @@ export class DriverPage extends React.Component {
 
                     <img
                         src={driver_pic}
+                        // src={img_src}
                         alt="driver pic"
                         style={{
                             width: '100%',
