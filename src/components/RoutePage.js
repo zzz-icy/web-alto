@@ -61,8 +61,16 @@ class RoutePage extends React.Component {
                     </p>
                 </div>
                 <div className="container container--column topBorder">
-                    <div style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight', }}>Current Vibe</div>
-                    <div style={{ marginTop: 6, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskRegular', }}>{vibe.name}</div>
+                    <div
+                        style={{ marginTop: 10, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskLight' }}
+                    >
+                        Current Vibe
+                    </div>
+                    <div
+                        style={{ marginTop: 6, fontSize: 12, color: 'rgb(108,104,91)', fontFamily: 'PxGroteskRegular' }}
+                    >
+                        {vibe.name}
+                    </div>
 
                 </div>
                 <div className="container--withoutPadding marginTop">

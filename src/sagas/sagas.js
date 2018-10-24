@@ -1,4 +1,4 @@
-import { fork } from 'redux-saga/effects';
+import { fork, all } from 'redux-saga/effects';
 import tripSaga from './tripSaga';
 import driverSaga from './driverSaga';
 import vehicleSaga from './vehicleSaga';
@@ -11,7 +11,8 @@ const sagas = [
     vehicleSaga,
     driverSaga
 ];
-
+// [...effects] has been deprecated in favor of all([...effects]), please update your code
+// added all([effects...])
 export default function* rootSage() {
-    yield sagas.map(saga => fork(saga));
+    yield all(sagas.map(saga => fork(saga)));
 }
