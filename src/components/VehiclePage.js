@@ -23,6 +23,7 @@ class VehiclePage extends React.Component {
                 }}>
                     <img
                         src={process.env.NODE_ENV === 'development' ? vehicle_pic : vehicle.image}
+
                         alt="vehicle pic"
                         style={{
                             width: '100%',

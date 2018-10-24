@@ -28,7 +28,9 @@ export class DriverPage extends React.Component {
                 <div className="container-withoutPadding  container--centered driver__image">
 
                     <img
+
                         src={process.env.NODE_ENV === 'development' ? driver_pic : driver.image}
+
                         // src={img_src}
                         alt="driver pic"
                         style={{
