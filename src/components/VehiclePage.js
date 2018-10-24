@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadVehicle } from '../actions/vehicle';
-import vehicle_pic from '../images/Vehicle_photo.png';
+// import vehicle_pic from '../images/Vehicle_photo.png';
 
 class VehiclePage extends React.Component {
     componentDidMount() {
@@ -22,7 +22,7 @@ class VehiclePage extends React.Component {
                     width: "80%"
                 }}>
                     <img
-                        src={vehicle_pic}
+                        src={vehicle.image}
                         alt="vehicle pic"
                         style={{
                             width: '100%',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loadDriver } from '../actions/driver';
-import driver_pic from '../images/Driver_photo.png';
+// import driver_pic from '../images/Driver_photo.png';
 
 export class DriverPage extends React.Component {
     componentDidMount() {
@@ -28,7 +28,7 @@ export class DriverPage extends React.Component {
                 <div className="container-withoutPadding  container--centered driver__image">
 
                     <img
-                        src={driver_pic}
+                        src={driver.image}
                         // src={img_src}
                         alt="driver pic"
                         style={{
