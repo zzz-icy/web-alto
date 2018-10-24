@@ -16,7 +16,7 @@ const Header = () => (
             <img src={vibes} alt='vibes' className="header__img--side" />
 
         </div>
-        <div className="container container--centered container--center">
+        <div className="container container--centered container--center container--flexwrap">
             <div className="nav__item nav--marginRight">
                 <NavLink
                     exact to="/"

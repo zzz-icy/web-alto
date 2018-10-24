@@ -41,7 +41,6 @@ class RoutePage extends React.Component {
 
                     <div className="container ">
                         <img src={mapIcon} alt="current location icon" className="route__image--alignself" />
-
                     </div>
                 </div>
                 <div className="container">
