@@ -39,5 +39,7 @@
 .route__image--alignself {
     // align-self: flex-end;
     position:relative;
-    left: 90%
+    left: 90%;
+    z-index: 1;
+
 }
